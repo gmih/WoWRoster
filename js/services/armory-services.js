@@ -11,10 +11,10 @@
 
         return {
             getRealms : function() {
-                return $http.jsonp('https://' + this.getRegion().toLowerCase() + '.battle.net/api/wow/realm/status?jsonp=JSON_CALLBACK');
+                return $http.jsonp('https://' + this.getRegion().toLowerCase() + '.api.battle.net/wow/realm/status?locale=en_US&jsonp=JSON_CALLBACK&apikey=vggwc4ru9k5uq7hhz46dyga9st4pf6z6');
             },
             getCharacters : function() {
-              return $http.jsonp('https://' + this.getRegion().toLowerCase() + '.battle.net/api/wow/guild/' + this.getRealm() + '/' + this.getGuildName() + '?fields=members&jsonp=JSON_CALLBACK&callback=JSON_CALLBACK');
+              return $http.jsonp('https://' + this.getRegion().toLowerCase() + '.api.battle.net/wow/guild/' + this.getRealm() + '/' + this.getGuildName() + '?fields=members&locale=en_US&jsonp=JSON_CALLBACK&apikey=vggwc4ru9k5uq7hhz46dyga9st4pf6z6');
             },
             asError : function(status, statusText) {
                 return "Unable to fetch data from armory (Code " + status + ") : " + '\n' + statusText;
